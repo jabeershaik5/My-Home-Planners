@@ -1,0 +1,24 @@
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './base/base';
+@import './components/navbar';
+@import './components/button';
+@import './components/planCard';
+@import './pages/home';
+
+.hide{
+    display: none;
+}
+@keyframes slideup{
+    from{
+        transform:translateY(50px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.slide-up{
+    animation: slideup 0.5s ease forwards;
+}

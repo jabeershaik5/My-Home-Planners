@@ -1,0 +1,46 @@
+@import '../abstracts/mixins';
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+html{
+    
+    font-size: 51%;
+    
+    @include responsive(600){
+        font-size: 54%;
+    }
+    @include responsive(900){
+        font-size: 58%;
+    }
+    @include responsive(1100){
+        font-size: 62.5%;
+    }
+}
+
+body{
+    box-sizing: border-box;
+    line-height: 1.7;
+    color:$color-base-dark;
+    background-color: $color-primary-light;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.section{
+    width: 100%;
+    height:auto;
+}

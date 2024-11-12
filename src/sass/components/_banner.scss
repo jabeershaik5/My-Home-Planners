@@ -1,0 +1,16 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.banner{
+    display: inline-block;
+    padding:1rem 2rem;
+    background-color: $color-primary-blue;
+    color:$color-primary-light;
+    justify-self: flex-end;
+    font-weight: 600;
+    width:60%;
+
+    @include responsive(900){
+        width:30%;
+    }
+}

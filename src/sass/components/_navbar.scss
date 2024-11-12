@@ -1,0 +1,106 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.header{
+    width:100%;
+    max-width:100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    &-nav{
+        position: fixed;
+        height:7rem;
+        width:100%;
+        font-size: 1.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:0 2rem;
+        background-color: $color-primary-blue;
+        color:$color-primary-light;
+        z-index:100;
+        top:0;
+        left:0;
+
+        @include responsive(900){
+            background-color: $color-primary-light;
+            color:$color-primary-blue;
+            padding:0 4rem;
+        }
+
+        &_logo{
+            font-size: 2rem;
+        }
+        &-menu_icon{
+            height:3.5rem;
+            width:3.5rem;
+
+            @include responsive(900){
+                display: none;
+            }
+        }
+    }
+    &-menu_list{
+        padding:1rem;
+        background-color: $color-primary-blue;
+        color:$color-primary-light;
+        position: fixed;
+        top:6rem;
+        width:100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+        z-index:100;
+
+        @include responsive(900){
+            height:7rem;
+            padding:0;
+            transform: translateX(0);
+            display: flex;
+            top:0;
+            right:0;
+            width:auto;
+            transition: none;
+            color:$color-primary-blue;
+            background-color: transparent;
+        }
+
+        &-active{
+            right:0;
+            transform: translateX(0);
+        }
+
+        li{
+            margin:1rem 0;
+            padding:0.5rem 1rem;
+            border-bottom:2px solid transparent;
+            cursor: pointer;
+            transition: border 0.2s ease;
+
+            @include responsive(900){
+                font-size: 1.8rem;
+                height:100%;
+                margin: 0 1rem;
+                padding:0 2rem;
+                @include center
+            }
+
+            &:hover{
+                border-bottom:2px solid white;
+                @include responsive(900){
+                    background-color: $color-primary-blue;
+                    border:none;
+                    color:$color-primary-light;
+                }
+            }
+        }
+    }
+    
+}
+.open-btn, .close-btn{
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
