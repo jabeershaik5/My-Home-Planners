@@ -20,6 +20,23 @@ function init(){
         contactClasses.classList.add('hide');
     });
     
+    const observer = new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                const animation = entry.target.getAttribute('data-animate');
+                entry.target.classList.add(animation);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.8});
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const elements = document.querySelectorAll('[data-animate]');
+        elements.forEach(element=>{
+            observer.observe(element);
+        });
+    });
+    
     if(icon){
         icon.addEventListener('click', ()=>{
             const menu = document.querySelector('.header-menu_list');
@@ -32,21 +49,3 @@ function init(){
     }   
 }
 init();
-
-document.addEventListener('DOMContentLoaded', function(){
-    const observer = new IntersectionObserver((entries, observer)=>{
-        entries.forEach(entry=>{
-            if(entry.isIntersecting){
-                const animation = entry.target.getAttribute('data-animate');
-                console.log(animation);
-                entry.target.classList.add(animation);
-            }
-            observer.unobserve(entry.target);
-        });
-    }, {threshold:0.1});
-
-    const elements = document.querySelectorAll('[data-animate]');
-    elements.forEach(element=>{
-        observer.observe(element)
-    });
-})

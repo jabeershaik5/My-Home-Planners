@@ -24,12 +24,6 @@
         top:0;
         left:0;
 
-        @include responsive(900){
-            background-color: $color-primary-light;
-            color:$color-primary-blue;
-            padding:0 4rem;
-        }
-
         &_logo{
             font-size: 2rem;
         }
@@ -40,6 +34,13 @@
             @include responsive(900){
                 display: none;
             }
+        }
+
+        @include responsive(900){
+            background-color: $color-primary-light;
+            color:$color-primary-blue;
+            padding:0 4rem;
+            border-bottom: 2px solid $color-secondary-red;
         }
     }
     &-menu_list{
@@ -53,19 +54,6 @@
         transition: transform 0.5s ease;
         z-index:100;
 
-        @include responsive(900){
-            height:7rem;
-            padding:0;
-            transform: translateX(0);
-            display: flex;
-            top:0;
-            right:0;
-            width:auto;
-            transition: none;
-            color:$color-primary-blue;
-            background-color: transparent;
-        }
-
         &-active{
             right:0;
             transform: translateX(0);
@@ -78,14 +66,6 @@
             cursor: pointer;
             transition: border 0.2s ease;
 
-            @include responsive(900){
-                font-size: 1.8rem;
-                height:100%;
-                margin: 0 1rem;
-                padding:0 2rem;
-                @include center
-            }
-
             &:hover{
                 border-bottom:2px solid white;
                 @include responsive(900){
@@ -94,9 +74,33 @@
                     color:$color-primary-light;
                 }
             }
+            @include responsive(900){
+                font-size: 1.8rem;
+                height:100%;
+                margin: 0 1rem;
+                padding:0 2rem;
+                @include center
+            }
+        }
+
+        @include responsive(900){
+            height:7rem;
+            padding:0;
+            transform: translateX(0);
+            display: flex;
+            top:0;
+            right:0;
+            width:auto;
+            transition: none;
+            color:$color-primary-blue;
+            background-color: transparent;
         }
     }
     
+}
+.current{
+    background-color: $color-primary-blue;
+    color:$color-primary-light;
 }
 .open-btn, .close-btn{
     cursor: pointer;

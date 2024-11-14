@@ -10,13 +10,17 @@
 }
 html{
     
-    font-size: 51%;
-    
+    @include responsive(300){
+        font-size: 42%;
+    }
+
+    font-size: 48%;
+
     @include responsive(600){
-        font-size: 54%;
+        font-size: 53%;
     }
     @include responsive(900){
-        font-size: 58%;
+        font-size: 56%;
     }
     @include responsive(1100){
         font-size: 62.5%;

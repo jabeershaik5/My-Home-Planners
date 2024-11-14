@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch-sass":"sass --watch ./src/sass/style.scss:./src/css/style.css",
+    "watch-sass":"sass --watch ./src/sass/style.scss:./public/css/style.css",
     "build-sass":"sass ./src/style.scss ./src/css/style.css"
   },
   "author": "Jabeer Shaik",

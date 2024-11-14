@@ -1,0 +1,39 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
+@include animation-type(slideup, translateY(50%), translateY(0));
+@include animation-type(slideright, translateX(-50%), translateX(0));
+@include animation-type(fadein, translateY(10%), translateY(0));
+@include animation-type(scaleup, scale(0.5), scale(1));
+
+@keyframes expand{
+    from{
+        width:0;
+        visibility: hidden;
+    }
+    to{
+       visibility: visible;
+    }
+}
+
+.slide-up{
+   @include animation(slideup, 0.5s);
+}
+
+.slide-right{
+    @include animation(slideright);
+}
+
+
+.fade-in{
+    @include animation(fadein, 0.5s);
+}
+
+.scale-up{
+    @include animation(scaleup);
+}
+
+.expand{
+    animation: expand 0.5s ease forwards;
+}
