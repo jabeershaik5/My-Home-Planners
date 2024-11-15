@@ -172,8 +172,9 @@
     @include responsive(900){
         display: flex;
         margin-top: 7rem;
-        height:calc(100vh - 6rem);
-        max-height: auto;
+        min-height:auto;
+        max-height:50rem;
+
     }
 }
 
@@ -492,8 +493,7 @@
         overflow: hidden;
 
         @include responsive(900){
-            height:80vh;
-            padding:10rem 0;
+            height:40rem;
         }
     }
     &-border_box{

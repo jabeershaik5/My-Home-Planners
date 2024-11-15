@@ -421,8 +421,8 @@ img {
   .hero {
     display: flex;
     margin-top: 7rem;
-    height: calc(100vh - 6rem);
-    max-height: auto;
+    min-height: auto;
+    max-height: 50rem;
   }
 }
 
@@ -760,8 +760,7 @@ img {
 }
 @media screen and (min-width: 900px) {
   .services .plans-content_wrapper {
-    height: 80vh;
-    padding: 10rem 0;
+    height: 40rem;
   }
 }
 .services-border_box {
