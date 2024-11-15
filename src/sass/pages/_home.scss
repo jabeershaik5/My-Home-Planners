@@ -666,10 +666,4 @@
         color:$color-secondary-red;
         margin-left:1rem;
     }
-    @include responsive(600){
-        height:30vh;
-    }
-    @include responsive(900){
-        height:55vh;
-    }
 }

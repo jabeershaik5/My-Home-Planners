@@ -925,16 +925,6 @@ img {
   color: #FF4B07;
   margin-left: 1rem;
 }
-@media screen and (min-width: 600px) {
-  .footer {
-    height: 30vh;
-  }
-}
-@media screen and (min-width: 900px) {
-  .footer {
-    height: 55vh;
-  }
-}
 
 @keyframes slideup {
   from {
