@@ -253,7 +253,7 @@ img {
   min-height: 70rem;
   max-height: calc(100vh - 7rem);
   width: 100%;
-  background-image: url("../../../public/assets/2147710985.jpg");
+  background-image: url("../assets/2147710985.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -384,7 +384,7 @@ img {
   height: 35%;
   min-height: 35%;
   width: 100%;
-  background-image: url("../../../public/assets/constructionsite.jpg");
+  background-image: url("../assets/constructionsite.jpg");
   background-position: center;
   background-size: cover;
   z-index: 10;
