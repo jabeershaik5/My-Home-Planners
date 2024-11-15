@@ -25,7 +25,6 @@
     @include animation(slideright);
 }
 
-
 .fade-in{
     @include animation(fadein, 0.5s);
 }
