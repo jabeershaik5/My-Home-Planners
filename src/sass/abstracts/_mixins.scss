@@ -15,8 +15,8 @@
     justify-content: $location;
 }
 
-@mixin animation($name, $delay:0s){
-    animation: $name 0.5s  ease forwards $delay;
+@mixin animation($name, $duration:0.5s, $delay:0s){
+    animation: $name $duration ease forwards $delay;
 }
 
 @mixin animation-type($name, $from, $to){

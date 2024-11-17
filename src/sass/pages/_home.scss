@@ -64,7 +64,7 @@
             font-size: 2.2rem;
             color:$color-primary-light;
             border:1px solid $color-primary-light;
-            transition:0.3s ease-out;
+            transition:0.2s ease-out;
             visibility: hidden;
             cursor: pointer;
 
@@ -82,7 +82,7 @@
         }
         &-contact_details{
             position: absolute;
-            top:-15rem;
+            top:-18rem;
             left:20%;
             width:70%;
             height:auto;
@@ -108,9 +108,11 @@
             }
             &-content{
                 padding:2rem;
-                span{
+                span, span a{
                     display: flex;
-                    align-items: center;
+                    align-items: center;  
+                }
+                span{
                     margin-top: 1rem;
                 }
                 svg{
@@ -173,7 +175,7 @@
         display: flex;
         margin-top: 7rem;
         min-height:auto;
-        max-height:50rem;
+        max-height:52rem;
 
     }
 }
@@ -242,6 +244,7 @@
             flex-direction: column;
             justify-content: center;
             padding:3rem;
+            margin-top:5rem;
 
             span{
                 display: flex;
@@ -262,7 +265,7 @@
             }
         }
 
-        @include responsive(900){
+        @include responsive(800){
             display: flex;
             align-items: center;
             padding:0 4rem;
@@ -276,7 +279,7 @@
 }
 
 .plans-images{
-    min-height:55rem;
+    min-height:45rem;
     width:100%;
     position: relative;
     overflow: hidden;
@@ -289,6 +292,8 @@
         transform: translate(-50%, -80%) rotate(90deg);
         position: absolute;
         user-select: none;
+
+        
     }
     &-image1{
         z-index:1;
@@ -303,6 +308,12 @@
             top:50%;
             left:50%;
             transform: rotate(90deg) translate(-100%, 30%);
+        }
+        @include responsive(800){
+            transform: rotate(90deg) translate(-60%, 30%);
+        }
+        @include responsive(900){
+            transform: rotate(90deg) translate(-80%,30%);
         }
     }
     &-image2{
@@ -319,6 +330,12 @@
             top:50%;
             left:50%;
             transform: rotate(90deg) translate(-110%, 10%);
+        }
+        @include responsive(800){
+            transform: rotate(90deg) translate(-60%, 10%);
+        }
+        @include responsive(900){
+            transform: rotate(90deg) translate(-80%,0%);
         }
     }
     &-image3{
@@ -338,12 +355,18 @@
             left:50%;
             transform: rotate(90deg) translate(-150%, 80%);
         }
+        @include responsive(800){
+            transform: rotate(90deg) translate(-90%, 80%);
+        }
+        @include responsive(900){
+            transform: rotate(90deg) translate(-100%,80%);
+        }
     }
 
     @include responsive(600){
         min-height:45rem;
     }
-    @include responsive(900){
+    @include responsive(800){
         margin-top:5rem;
         order:1;
     }
@@ -438,11 +461,11 @@
         box-shadow: 7px 9px 31px -18px rgba(163,160,163,1);
 
         &-image_container{
-            height:70%;
+            height:65%;
             background-color: white;
         }
         &-info{
-            height:30%;
+            height:35%;
             width:100%;
             display: flex;
             flex-direction: column;
@@ -465,13 +488,25 @@
         }
         &-btn{
             width: 100%;
-            height:5rem;
-            background-color: $color-secondary-red;
+            height:4rem;
+            background-color: rgb(8, 155, 8);
             color:$color-primary-light;
             padding:1rem 2rem;
             border:none;
             justify-self: end;
             cursor: pointer;
+            text-align: center;display: flex;
+            align-items: center;
+            justify-content: center;
+            border:2px solid transparent;
+            border-end-start-radius:8px;
+            border-end-end-radius:8px;
+
+            &:hover{
+                background-color: $color-primary-light;
+                color:rgb(8, 155, 8);
+                border-color:rgb(8, 155, 8);
+            }
         }
 
         @include responsive(900){
@@ -503,6 +538,7 @@
         padding:2rem 1rem;
         font-weight: 500;
         margin-top: 4rem;
+        z-index:-1;
 
         p{
             border-bottom:1px solid $color-secondary-red;
@@ -511,7 +547,7 @@
 
         @include responsive(900){
             width:80%;
-            margin-top: 15rem;
+            margin-top: 12rem;
             border-width: 3px;
         }
     }
@@ -548,15 +584,17 @@
 }
 
 .footer{
-    min-height: 40rem;
+    min-height:35rem;
     height: auto;
     width:100%;
     background-color: $color-base-dark;
     color:$color-primary-light;
     font-size: 1.8rem;
-    padding:2rem 0;
-    z-index:200;
-    background-color: black;
+    padding:2rem;
+    z-index:3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
    
     &_data{
         height:100%;
@@ -564,12 +602,15 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2,1fr);
-        padding:2rem;
-        grid-row-gap: 5rem;
+        padding:2rem 1rem;
+        grid-row-gap: 3rem;
         &-contact{
             color:$color-secondary-red;
         }
-
+        @include responsive(600){
+            grid-template-rows:repeat(1,1fr);
+            place-items: center;
+        }
         @include responsive(800){
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows:repeat(1, 1fr);
@@ -592,7 +633,7 @@
             margin-bottom:2rem;
             
             p:last-child{
-                color:red;
+                color:$color-secondary-red;
                 margin:0;
             }
             h2{
@@ -626,6 +667,10 @@
 
         a{
             margin:0.7rem 0;
+
+            &:hover{
+                text-decoration: underline;
+            }
         }
 
         @include responsive(600){
@@ -635,6 +680,7 @@
         }
     }
     &-socials{
+
         grid-row: 2/span 1;
 
         &_title{
@@ -662,8 +708,30 @@
             height: 100%;
         }
     }
+    &-copyright{
+        display: flex;
+        flex-direction: column;
+        color:$color-primary-light;
+        text-align: center;
+
+        a{
+            color:$color-secondary-red;
+        }
+        @include responsive(600){
+            margin-top: 5rem;
+            flex-direction: row;
+        }
+    }
     .prop-title{
         color:$color-secondary-red;
         margin-left:1rem;
+    }
+
+    @include responsive(900){
+        min-height:33rem;
+        max-height:35rem;
+        padding:0rem 4rem;
+        padding-top:2rem;
+        font-size: 1.5rem;
     }
 }

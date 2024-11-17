@@ -18,7 +18,7 @@
 }
 
 .slide-up{
-   @include animation(slideup, 0.5s);
+   @include animation(slideup,0.2s, 0.5s);
 }
 
 .slide-right{
